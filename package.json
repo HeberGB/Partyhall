@@ -1,0 +1,23 @@
+{
+  "name": "partyhall",
+  "version": "0.0.1",
+  "description": "WEB project to school",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HeberGB/Partyhall.git"
+  },
+  "author": "@hebergb",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HeberGB/Partyhall/issues"
+  },
+  "homepage": "https://github.com/HeberGB/Partyhall#readme",
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "materialize-css": "^0.100.2"
+  }
+}
