@@ -44,37 +44,37 @@ h1 {
 }
 
 .tarjeta-evento:nth-child(2) {
-  background-image: url('assets/graduacion.png') !important;
+  background-image: url('../assets/graduacion.png') !important;
   background-size: cover;
 }
 
 .tarjeta-evento:nth-child(3) {
-  background-image: url('assets/boda.jpg') !important;
+  background-image: url('../assets/boda.jpg') !important;
   background-size: cover;
 }
 
 .tarjeta-evento:nth-child(4) {
-  background-image: url('assets/bautizo.jpg') !important;
+  background-image: url('../assets/bautizo.jpg') !important;
   background-size: cover;
 }
 
 .tarjeta-evento:nth-child(5) {
-  background-image: url('assets/xv.jpg') !important;
+  background-image: url('../assets/xv.jpg') !important;
   background-size: cover;
 }
 
 .tarjeta-evento:nth-child(6) {
-  background-image: url('assets/familia.jpg') !important;
+  background-image: url('../assets/familia.jpg') !important;
   background-size: cover;
 }
 
 .tarjeta-evento:nth-child(7) {
-  background-image: url('assets/negocios.jpg') !important;
+  background-image: url('../assets/negocios.jpg') !important;
   background-size: cover;
 }
 
 .tarjeta-evento:nth-child(8) {
-  background-image: url('assets/otro.jpg') !important;
+  background-image: url('../assets/otro.jpg') !important;
   background-size: cover;
 }
 
