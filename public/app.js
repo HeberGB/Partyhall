@@ -42,30 +42,14 @@ module.exports = function (comida) {
   } else if (comida == 'pasta') {
     return `
     <h5 class="center-align">Pastas</h5>
-    <p class="center-align">Crema de tres quesos
-      <br>Crema de champiñón
-      <br>Crema de elote
-      <br>Crema de zanahoria
-      <br>Crema de cilantro
-      <br>Crema de chile poblano
-      <br>Crema de morrón
-      <br>Crema de chícharos
-      <br>Crema de espinacas
-      <br>Crema de calabacitas
-      <br>Crema de verduras
-      <br>Crema campesina
-      <br>Crema de zetas con nuez
-      <br>Crema de brócoli
-      <br>Crema de papa
-      <br>Crema de cilantro con nuez
-      <br>Sopa Azteca
-      <br>Sopa de Cebolla
-      <br>Sopa de lentejas
-      <br>Sopa de tortillas
-      <br>Sopa de papas
-      <br>Consomé de pollo con tallarines
-      <br>Consomé de pollo con verduras
-      <br>Consomé de pollo con arroz</p>`
+    <p class="center-align">Codito
+    <br>Codito a la italiana
+    <br>Spaguetti a la crema
+    <br>Spaguetti a la italiana
+    <br>Spaguetti a la boloñesa
+    <br>Spaguetti al chipotle
+    <br>Spaguetti a la florentina
+    <br>Tallarines en salsa de champiñones</p>`
   } else if (comida == 'fuerte') {
     return `
     <h5 class="center-align">Plato fuerte de cerdo</h5>
