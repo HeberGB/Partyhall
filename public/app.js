@@ -410,6 +410,7 @@ $(document).ready(() => {
     const contrasena = $('#contrasena').val()
     localStorage.setItem(nick, JSON.stringify(new User(nombre, apellido, nick, contrasena)))
     document.getElementById('registro').reset()
+    alertify.success('Usuario registrado :)')
   })
 
   let evento = new Evento()
@@ -445,23 +446,26 @@ $(document).ready(() => {
   let clicks = 0
   let mesa_pasada
   $('#invitado').click(function (invitado) {
-    if (mesa_pasada != $('#mesas').val()) clicks = 0
-    if (clicks != 0) {
-      invitados.dispose()
-      console.log(clicks)
+    if (evento.mesas[$('#mesas').val()].invitados.length >= 8) {
+      alertify.error('Esta mesa ya tiene 8 personas')
+    } else {
+      if (mesa_pasada != $('#mesas').val()) clicks = 0
+      if (clicks != 0) {
+        invitados.dispose()
+      }
+      if ($('#mesas').val()) {
+        mesa_pasada = $('#mesas').val()
+        evento.mesas[$('#mesas').val()].invitados.push($('#nombreInvitado').val())
+        let referenceElement = $('#mesa-' + $('#mesas').val())
+        invitados = new Tooltip(referenceElement, {
+          placement: 'top',
+          title: `Invitados:
+          ${evento.mesas[$('#mesas').val()].invitados.join('\n')}`
+        })
+        clicks++
+        alertify.success('Invitado agregado')
+      } else alertify.error('No selecionaste la mesa')
     }
-    if ($('#mesas').val()) {
-      mesa_pasada = $('#mesas').val()
-      evento.mesas[$('#mesas').val()].invitados.push($('#nombreInvitado').val())
-      let referenceElement = $('#mesa-' + $('#mesas').val())
-      invitados = new Tooltip(referenceElement, {
-        placement: 'top', // or bottom, left, right, and variations
-        title: `Invitados:
-        ${evento.mesas[$('#mesas').val()].invitados.join('\n')}`
-      })
-      clicks++
-      alertify.success('Invitado agregado')
-    } else alertify.error('No selecionaste la mesa')
   })
   $('#guardar').click(function () {
     for (let i = 0; i < mesaId; i++) {
