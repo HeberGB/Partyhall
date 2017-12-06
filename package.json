@@ -17,8 +17,11 @@
   },
   "homepage": "https://github.com/HeberGB/Partyhall#readme",
   "dependencies": {
+    "alertifyjs": "^1.11.0",
+    "bootbox": "^4.4.0",
     "interactjs": "^1.2.9",
     "jquery": "^3.2.1",
-    "materialize-css": "^0.100.2"
+    "materialize-css": "^0.100.2",
+    "tooltip.js": "^1.1.7"
   }
 }

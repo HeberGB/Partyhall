@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Partyhall - Reservaciones</title>
   <link rel="stylesheet" href="..\public\materialize.css">
+  <link rel="stylesheet" href="..\public\alertify.css">
   <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Lobster" rel="stylesheet">
   <link rel="stylesheet" href="..\public\style.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -19,12 +20,19 @@
 
   </header>
   <main>
-    <div class="row">
-      <form>
+    <div class="row first">
+      <form id="evento-form">
+        <div class="row">
+          <div class="input-field col s4 offset-s2">
+            <a class="waves-effect waves-light btn indigo lighten-2" id="restaurar">
+              <i class="material-icons right">backup</i>
+              Pasado
+            </a>
+          </div>
+        </div>
         <div class="row">
           <div class="col s8 offset-s2">
-
-            <div class="input-field col s3">
+            <div class="input-field col s4">
               <select id="eventos">
                 <option value="" disabled selected>Escoge el evento</option>
                 <option value="graduacion">Graduación</option>
@@ -36,17 +44,13 @@
                 <option value="otro">Otro</option>
               </select>
             </div>
-            <div class="input-field col s3">
+            <div class="input-field col s4">
               <input type="text" class="datepicker" id="calendario">
               <label for="calendario">Escoge la fecha</label>
             </div>
-            <div class="input-field col s3">
+            <div class="input-field col s4">
               <input type="text" class="timepicker" id="hora">
               <label for="hora">Escoge la hora</label>
-            </div>
-            <div class="input-field col s3">
-              <a class="waves-effect waves-light btn indigo lighten-2">
-                <i class="material-icons left">cloud</i>Pasados</a>
             </div>
           </div>
         </div>
@@ -55,111 +59,104 @@
           <div class="input-field col s2">
             <select id="entrada">
               <option value="" disabled selected>Escoge la entrada</option>
-              <option value="jitomates">Jitomates rellenos de atún</option>
-              <option value="rollitos">Rollitos de jamón con ensalada de la casa</option>
-              <option value="perlas">Perlas de melón al kirsch</option>
-              <option value="coctel">Coctel de frutas de temporada</option>
-              <option value="ensalada-verde">Ensalada verde</option>
-              <option value="ensalada-berros">Ensalada de berros y champiñón con crema agria</option>
-              <option value="crepas-champinon">Crepas de champiñón</option>
-              <option value="calabacitas-rellenas">Calabacitas rellenas del chef</option>
+              <option value="Jitomates rellenos de atún">Jitomates rellenos de atún</option>
+              <option value="Rollitos de jamón con ensalada de la casa">Rollitos de jamón con ensalada de la casa</option>
+              <option value="Perlas de melón al kirsch">Perlas de melón al kirsch</option>
+              <option value="Coctel de frutas de temporada">Coctel de frutas de temporada</option>
+              <option value="Ensalada verde">Ensalada verde</option>
+              <option value="Ensalada de berros y champiñón con crema agria">Ensalada de berros y champiñón con crema agria</option>
+              <option value="Crepas de champiñón">Crepas de champiñón</option>
+              <option value="Calabacitas rellenas del chef">Calabacitas rellenas del chef</option>
             </select>
           </div>
           <div class="input-field col s2">
             <select id="sopa">
-              <option value="" disabled selected>Escoge la entrada</option>
-              <option value="crema-quesos">Crema de tres quesos</option>
-              <option value="crema-champinon">Crema de champiñón</option>
-              <option value="crema-elote">Crema de elote</option>
-              <option value="crema-zanahoria">Crema de zanahoria</option>
-              <option value="crema-cilantro">Crema de cilantro</option>
-              <option value="crema-pablano">Crema de chile poblano</option>
-              <option value="crema-morron">Crema de morrón</option>
-              <option value="crema-chicharos">Crema de chícharos</option>
-              <option value="crema-espinacas">Crema de espinacas</option>
-              <option value="crema-calabacitas">Crema de calabacitas</option>
-              <option value="crema-verduras">Crema de verduras</option>
-              <option value="crema-campesina">Crema campesina</option>
-              <option value="crema-zetas">Crema de zetas con nuez</option>
-              <option value="crema-brocoli">Crema de brócoli</option>
-              <option value="crema-papa">Crema de papa</option>
-              <option value="crema-nuez">Crema de cilantro con nuez</option>
-              <option value="sopa-azteca">Sopa Azteca</option>
-              <option value="sopa-cebolla">Sopa de Cebolla</option>
-              <option value="sopa-lentejas">Sopa de lentejas</option>
-              <option value="sopa-tortillas">Sopa de tortillas</option>
-              <option value="sopa-papas">Sopa de papas</option>
-              <option value="consome-tallarines">Consomé de pollo con tallarines</option>
-              <option value="consome-verduras">Consomé de pollo con verduras</option>
-              <option value="consome-arroz">Consomé de pollo con arroz</option>
+              <option value="" disabled selected>Escoge la sopa</option>
+              <option value="Crema de tres quesos">Crema de tres quesos</option>
+              <option value="Crema de champiñón">Crema de champiñón</option>
+              <option value="Crema de elote">Crema de elote</option>
+              <option value="Crema de zanahoria">Crema de zanahoria</option>
+              <option value="Crema de cilantro">Crema de cilantro</option>
+              <option value="Crema de chile poblano">Crema de chile poblano</option>
+              <option value="Crema de morrón">Crema de morrón</option>
+              <option value="Crema de chícharos">Crema de chícharos</option>
+              <option value="Crema de espinacas">Crema de espinacas</option>
+              <option value="Crema de calabacitas">Crema de calabacitas</option>
+              <option value="Crema de verduras">Crema de verduras</option>
+              <option value="Crema campesina">Crema campesina</option>
+              <option value="Crema de zetas con nuez">Crema de zetas con nuez</option>
+              <option value="Crema de brócoli">Crema de brócoli</option>
+              <option value="Crema de papa">Crema de papa</option>
+              <option value="Crema de cilantro con nuez">Crema de cilantro con nuez</option>
+              <option value="Sopa Azteca">Sopa Azteca</option>
+              <option value="Sopa de Cebolla">Sopa de Cebolla</option>
+              <option value="Sopa de lentejas">Sopa de lentejas</option>
+              <option value="Sopa de tortillas">Sopa de tortillas</option>
+              <option value="Sopa de papas">Sopa de papas</option>
+              <option value="Consomé de pollo con tallarines">Consomé de pollo con tallarines</option>
+              <option value="Consomé de pollo con verduras">Consomé de pollo con verduras</option>
+              <option value="Consomé de pollo con arroz">Consomé de pollo con arroz</option>
             </select>
           </div>
           <div class="input-field col s2">
             <select id="pasta">
               <option value="" disabled selected>Escoge la pasta</option>
-              <option value="codito">Codito</option>
-              <option value="codito-italiana">Codito a la italiana</option>
-              <option value="spaguetti-crema">Spaguetti a la crema</option>
-              <option value="spaguetti-italiana">Spaguetti a la italiana</option>
-              <option value="spaguetti-bolonesa">Spaguetti a la boloñesa</option>
-              <option value="spaguetti-chipotle">Spaguetti al chipotle</option>
-              <option value="spaguetti-florentina">Spaguetti a la florentina</option>
-              <option value="tallarines">Tallarines en salsa de champiñones</option>
+              <option value="Codito">Codito</option>
+              <option value="Codito a la italiana">Codito a la italiana</option>
+              <option value="Spaguetti a la crema">Spaguetti a la crema</option>
+              <option value="Spaguetti a la italiana">Spaguetti a la italiana</option>
+              <option value="Spaguetti a la boloñesa">Spaguetti a la boloñesa</option>
+              <option value="Spaguetti al chipotle">Spaguetti al chipotle</option>
+              <option value="Spaguetti a la florentina">Spaguetti a la florentina</option>
+              <option value="Tallarines en salsa de champiñones">Tallarines en salsa de champiñones</option>
             </select>
           </div>
           <div class="input-field col s2">
             <select id="fuerte">
               <option value="" disabled selected>Escoge el plato fuerte</option>
               <optgroup label="Plato fuerte de cerdo">
-                <option value="">Escalopas de cerdo en salsa greavy</option>
-                <option value="">Medallones de cerdo en salsa de mostaza</option>
-                <option value="">Lomo relleno con frutos secos en salsa de tamarindo</option>
-                <option value="">Loma a la ciruela</option>
-                <option value="">Pierna de cerdo en salsa de manzana</option>
-                <option value="">Lomo de cerdo en salsa de naranja</option>
+                <option value="Escalopas de cerdo en salsa greavy">Escalopas de cerdo en salsa greavy</option>
+                <option value="Medallones de cerdo en salsa de mostaza">Medallones de cerdo en salsa de mostaza</option>
+                <option value="Lomo relleno con frutos secos en salsa de tamarindo">Lomo relleno con frutos secos en salsa de tamarindo</option>
+                <option value="Lomo a la ciruela">Lomo a la ciruela</option>
+                <option value="Pierna de cerdo en salsa de manzana">Pierna de cerdo en salsa de manzana</option>
+                <option value="Lomo de cerdo en salsa de naranja">Lomo de cerdo en salsa de naranja</option>
               </optgroup>
               <optgroup label="Plato fuerte de pollo">
-                <option value="">Pechuga a la crema</option>
-                <option value="">Pechuga a las tres pimientas</option>
-                <option value="">Pechuga almendrada</option>
-                <option value="">Pechuga en salsa de champiñones</option>
-                <option value="">Pechuga Cordón blue</option>
-                <option value="">Pechuga rellena de queso</option>
-                <option value="">Suprema rellena de champiñones en salsa de poblano</option>
-                <option value="">Pechuga rellena de espinacas en salsa de mostaza</option>
-                <option value="">Pechuga rellena de jamón y queso Oaxaca</option>
+                <option value="Pechuga a la crema">Pechuga a la crema</option>
+                <option value="Pechuga a las tres pimientas">Pechuga a las tres pimientas</option>
+                <option value="Pechuga almendrada">Pechuga almendrada</option>
+                <option value="Pechuga en salsa de champiñones">Pechuga en salsa de champiñones</option>
+                <option value="Pechuga Cordón blue">Pechuga Cordón blue</option>
+                <option value="Pechuga rellena de queso">Pechuga rellena de queso</option>
+                <option value="Suprema rellena de champiñones en salsa de poblano">Suprema rellena de champiñones en salsa de poblano</option>
+                <option value="Pechuga rellena de espinacas en salsa de mostaza">Pechuga rellena de espinacas en salsa de mostaza</option>
+                <option value="Pechuga rellena de jamón y queso Oaxaca">Pechuga rellena de jamón y queso Oaxaca</option>
               </optgroup>
             </select>
           </div>
           <div class="input-field col s2">
             <select id="guarnicion">
               <option value="" disabled selected>Escoge la guarnicion</option>
-              <option value="">Ejotes salteados a la mantequilla y perejil</option>
-              <option value="">Vegetales al vapor</option>
-              <option value="">Ensalada de manzana con pasitas</option>
-              <option value="">Zanahorias bichy</option>
-              <option value="">Ejotes salteados a las finas hierbas</option>
-              <option value="">Zanahoria al horno con jengibre y miel</option>
-              <option value="">Papitas al perejil</option>
-              <option value="">Puré de papa</option>
-              <option value="">Papa al horno</option>
-              <option value="">Puré de espinaca</option>
-              <option value="">Papitas salteadas con queso parmesano y perejil</option>
-              <option value="">Ensalada rusa</option>
+              <option value="Ejotes salteados a la mantequilla y perejil">Ejotes salteados a la mantequilla y perejil</option>
+              <option value="Vegetales al vapor">Vegetales al vapor</option>
+              <option value="Ensalada de manzana con pasitas">Ensalada de manzana con pasitas</option>
+              <option value="Zanahorias bichy">Zanahorias bichy</option>
+              <option value="Ejotes salteados a las finas hierbas">Ejotes salteados a las finas hierbas</option>
+              <option value="Zanahoria al horno con jengibre y miel">Zanahoria al horno con jengibre y miel</option>
+              <option value="Papitas al perejil">Papitas al perejil</option>
+              <option value="Puré de papa">Puré de papa</option>
+              <option value="Papa al horno">Papa al horno</option>
+              <option value="Puré de espinaca">Puré de espinaca</option>
+              <option value="Papitas salteadas con queso parmesano y perejil">Papitas salteadas con queso parmesano y perejil</option>
+              <option value="Ensalada rusa">Ensalada rusa</option>
             </select>
           </div>
         </div>
         <div class="row">
-          <div class="input-field col s3 offset-s2">
-            <a class="waves-effect waves-light btn indigo lighten-2" id="invitado">
-              <i class="material-icons left">exposure_plus_1</i>Invitado</a>
+          <div class="col s8 offset-s2">
+            <p>Primero escoge agrega todos los elementos y después acomodalos :)</p>
           </div>
-          <div class="input-field col s3">
-              <select id="mesas">
-                <option value="" disabled selected>Escoge la mesa</option>
-                
-              </select>
-            </div>
         </div>
         <div class="row">
           <div class="col s8 offset-s2">
@@ -178,6 +175,27 @@
             <div class="input-field col s3">
               <a class="waves-effect waves-light btn indigo lighten-2" id="bocina">
                 <i class="material-icons left">exposure_plus_1</i>Bocina</a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s8 offset-s2">
+            <div class="input-field col s3">
+              <input placeholder="Nombre de invitado" id="nombreInvitado" type="text" class="validate">
+            </div>
+            <div class="input-field col s3">
+              <select id="mesas">
+                <option value="" disabled selected>Escoge la mesa</option>
+
+              </select>
+            </div>
+            <div class="input-field col s3">
+              <a class="waves-effect waves-light btn indigo lighten-2" id="invitado">
+                <i class="material-icons left">exposure_plus_1</i>Invitado</a>
+            </div>
+            <div class="input-field col s3">
+              <a class="waves-effect waves-light btn indigo lighten-2" id="guardar">
+                <i class="material-icons left">archive</i>Evento</a>
             </div>
           </div>
         </div>

@@ -106,7 +106,7 @@ h1 {
 
 #inner-dropzone {
   height: 520px;
-  background-image: url('../assets/piso.jpg');
+  background: rgb(122, 105, 105);
 }
 
 .dropzone {
@@ -178,4 +178,8 @@ h1 {
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
+}
+
+.first {
+  margin-top: 30px;
 }
